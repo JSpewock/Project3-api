@@ -1,0 +1,24 @@
+{
+  "name": "Project3-api",
+  "version": "1.0.0",
+  "description": "Repository to hold General Assembly Project 3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSpewock/Project3-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JSpewock/Project3-api/issues"
+  },
+  "homepage": "https://github.com/JSpewock/Project3-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
