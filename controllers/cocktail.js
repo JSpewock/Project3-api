@@ -48,4 +48,4 @@ router.delete('/:id', (req, res) => {
 
 
 
-module.exports = cocktail
+module.exports = router
