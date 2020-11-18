@@ -26,12 +26,24 @@ router.post('/', (req,res) => {
 
 
 //update
-
+router.put('/:id', (req,res)=> {
+    Cocktail.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, createdCocktail)=> {
+        if (error) {
+            res.status(400).json({error: error.message})
+        }
+        res.status(200).json(createdCocktail)
+    })
+})
 
 
 //delete
 router.delete('/:id', (req, res) => {
-    C
+    Cocktail.findByIdAndRemove(req.params.id, (error, deletedCocktail) => {
+        if (error) {
+            res.status(400).json( {error: error.message})
+        }
+        res.status(200).json(createdCocktail)
+    })
 })
 
 
