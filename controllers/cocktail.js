@@ -58,5 +58,14 @@ router.post('/seed', (req, res) => {
 })
 
 // Delete All
+router.get('/deleteAll', (req, res) => {
+    Cocktail.deleteMany({}, (error, deletedCocktail) => {
+        if (error) {
+            res.status(400).json( {error: error.message})
+        }
+        res.status(200).json(deletedCocktail)
+    })
+    
+})
 
 module.exports = router
