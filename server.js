@@ -5,7 +5,8 @@ const PORT = process.env.PORT || '3003'
 const mongo_uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/project_three'
 
 
-
+//middleware
+app.use(express.json());
 
 //mongoose
 mongoose.connection.on('error', err => console.log(err.message + ' THIS IS THE ERROR MESSAGE'))
@@ -21,6 +22,8 @@ app.get('/', (req,res)=> {
     res.send('Hello World')
 })
 
+
+//listening port
 app.listen(PORT, ()=> {
     console.log('listening on port ', PORT)
 })
