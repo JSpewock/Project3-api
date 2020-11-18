@@ -18,8 +18,13 @@ mongoose.connection.once('open', () => {
 })
 
 
+//controller
+const cocktailController = require('./controllers/cocktail.js')
+app.use('/cocktail', cocktailController)
+
+
 app.get('/', (req,res)=> {
-    res.send('Hello World')
+    res.redirect('/cocktail')
 })
 
 
