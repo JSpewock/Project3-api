@@ -15,7 +15,14 @@ router.get('/', (req, res) => {
 
 
 //create
-
+router.post('/', (req,res) => {
+    Cocktail.create(req.body, (error, createdCocktail) => {
+        if (error) {
+            res.status(400).json({error: error.message})
+        }
+        res.status(200).json(createdCocktail)
+    })
+})
 
 
 //update
@@ -23,6 +30,9 @@ router.get('/', (req, res) => {
 
 
 //delete
+router.delete('/:id', (req, res) => {
+    C
+})
 
 
 
