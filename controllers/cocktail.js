@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Cocktail = require('../models/cocktail')
+const seed = require('../models/seed.js')
 
 //index
 router.get('/', (req, res) => {
@@ -46,6 +47,16 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+// Seed
+router.post('/seed', (req, res) => {
+    Cocktail.create(seed, (error, createdSeed) => {
+        if (error) {
+            res.status(400).json({error: error.message})
+        }
+        res.status(200).json(createdSeed)
+    })
+})
 
+// Delete All
 
 module.exports = router
