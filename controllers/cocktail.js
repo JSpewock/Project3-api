@@ -42,7 +42,7 @@ router.delete('/:id', (req, res) => {
         if (error) {
             res.status(400).json( {error: error.message})
         }
-        res.status(200).json(createdCocktail)
+        res.status(200).json(deletedCocktail)
     })
 })
 
