@@ -19,7 +19,7 @@ const corsOptions = {
         }
     }
 }
-app.use(cors(corsOptions))
+app.use(cors())
 
 //mongoose
 mongoose.connection.on('error', err => console.log(err.message + ' THIS IS THE ERROR MESSAGE'))
