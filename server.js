@@ -9,17 +9,17 @@ const mongo_uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/project_
 //middleware
 app.use(express.json());
 
-const whitelist = ['http://localhost:3000']
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (whitelist.includes(origin)) {
-            callback(null, true)
-        } else {
-            callback(new Error('Not allowed by CORS'))
-        }
-    }
-}
-app.use(cors(corsOptions))
+// const whitelist = ['*']
+// const corsOptions = {
+//     origin: function (origin, callback) {
+//         if (whitelist.includes(origin)) {
+//             callback(null, true)
+//         } else {
+//             callback(new Error('Not allowed by CORS'))
+//         }
+//     }
+// }
+app.use(cors())
 
 //mongoose
 mongoose.connection.on('error', err => console.log(err.message + ' THIS IS THE ERROR MESSAGE'))
