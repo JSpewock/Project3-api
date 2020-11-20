@@ -54,6 +54,9 @@ mongoose.connection.once('open', () => {
 const cocktailController = require('./controllers/cocktail.js')
 app.use('/cocktail', cocktailController)
 
+const userController = require('./controllers/users_controller.js')
+app.use('/user', userController)
+
 
 app.get('/', (req,res)=> {
     res.redirect('/cocktail')
