@@ -35,7 +35,7 @@ app.use(
 )
 
 app.use((req,res, next) => {
-    req.session.favorites = ['hello']
+    req.session.applePie = ['cherry']
     console.log(req.session);
     next()
 })
