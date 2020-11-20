@@ -26,7 +26,7 @@ app.use(
     session({
         secret: 'pop',
         resave: false,
-        saveUninitialized: true,
+        saveUninitialized: false,
         cookie: {
             httpOnly: true,
             maxAge: 3600000
@@ -56,6 +56,9 @@ app.use('/cocktail', cocktailController)
 
 const userController = require('./controllers/users_controller.js')
 app.use('/user', userController)
+
+const sessionController = require('./controllers/sessions_controller.js')
+app.use('/session', sessionController)
 
 
 app.get('/', (req,res)=> {
