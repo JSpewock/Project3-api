@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const PORT = process.env.PORT || 3003
 const mongo_uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/project_three'
+const session = require('express-session')
 
 
 //middleware
@@ -20,6 +21,24 @@ const corsOptions = {
     }
 }
 app.use(cors())
+
+app.use(
+    session({
+        secret: 'pop',
+        resave: false,
+        saveUninitialized: true,
+        cookie: {
+            httpOnly: true,
+            maxAge: 3600000
+        }
+    })
+)
+
+app.use((req,res, next) => {
+    req.session.favorites = ['hello']
+    console.log(req.session);
+    next()
+})
 
 //mongoose
 mongoose.connection.on('error', err => console.log(err.message + ' THIS IS THE ERROR MESSAGE'))
