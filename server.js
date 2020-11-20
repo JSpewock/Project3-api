@@ -34,11 +34,10 @@ app.use(
     })
 )
 
-app.use((req,res, next) => {
-    req.session.applePie = ['cherry']
-    console.log(req.session);
-    next()
-})
+// app.use((req,res, next) => {
+//     console.log(req.session);
+//     next()
+// })
 
 //mongoose
 mongoose.connection.on('error', err => console.log(err.message + ' THIS IS THE ERROR MESSAGE'))

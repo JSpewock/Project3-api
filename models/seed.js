@@ -3,7 +3,7 @@ const seed = [
         strDrink: 'Hurricane',
         strAlcoholic: 'Alcoholic',
         strInstructions: 'Put the lime in the coconut and shake it all up',
-        strDrinkThumb: "https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132484366.jpg",
+        strDrinkThumb: "https://www.liquor.com/thmb/5AXwkLkr2OUx8DufiZv3jSIVoYQ=/735x0/hurricane-720x720-primary-e5b3f57f86904ad39f87c96b1b0e0d1e.jpg",
         strIngredient1: 'Cinnamon',
         strIngredient2: 'Whiskey',
         strIngredient3: 'Grape Juice',

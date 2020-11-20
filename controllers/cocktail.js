@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
 
 //create
 router.post('/', (req,res) => {
+    console.log(req.session)
     Cocktail.create(req.body, (error, createdCocktail) => {
         if (error) {
             res.status(400).json({error: error.message})

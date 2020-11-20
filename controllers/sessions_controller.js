@@ -13,7 +13,8 @@ router.post('/', (req,res) => {
         } else {
             if (bcrypt.compareSync(req.body.password, foundUser.password)) {
                 req.session.currentUser = foundUser
-                res.send('user is logged in')
+                console.log(req.session)
+                res.status(200).json(foundUser)
             } else {
                 res.send('Password does not match')
             }
