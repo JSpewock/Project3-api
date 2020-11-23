@@ -49,7 +49,7 @@ router.delete('/:id', (req, res) => {
 })
 
 // Seed
-router.post('/seed', (req, res) => {
+router.get('/seed', (req, res) => {
     Cocktail.create(seed, (error, createdSeed) => {
         if (error) {
             res.status(400).json({error: error.message})
