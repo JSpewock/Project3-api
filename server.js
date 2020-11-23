@@ -61,7 +61,7 @@ app.use('/session', sessionController)
 
 
 app.get('/', (req,res)=> {
-    res.redirect('/cocktail')
+    res.send('hello')
 })
 
 
